@@ -1,0 +1,25 @@
+int findFloor(long long int arr[], int N, long long int x) {
+    
+      if(x==0)
+      return -1;
+      long long int l,m;
+      l=0;
+      m=N-1;
+      long long int mid;
+      int max=-1;
+      while(l<=m)
+      {
+          mid=(l)+(m-l)/2;
+          if(arr[mid]==x)
+          return mid;
+          else if(arr[mid]>x)
+          {
+             
+              max=mid;
+              m=mid-1;
+          }else
+          l=mid+1;
+      }
+         
+         return max;       
+}
